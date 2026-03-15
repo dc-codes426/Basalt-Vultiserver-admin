@@ -21,9 +21,9 @@ jobs:
       - name: Set image name
         id: meta
         run: |
-          REPO="${{ github.repository }}"
+          REPO="${{ github.repository_owner }}"
           REPO_LOWER="${REPO,,}"
-          echo "image=ghcr.io/${REPO_LOWER}" >> $GITHUB_OUTPUT
+          echo "image=ghcr.io/${REPO_LOWER}/basalt-admin" >> $GITHUB_OUTPUT
 
       - name: Log in to GitHub Container Registry
         uses: docker/login-action@v3
